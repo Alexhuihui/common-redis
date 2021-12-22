@@ -3,6 +3,8 @@ package top.alexmmd.redis.delay;
 import cn.hutool.core.date.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.redisson.api.RBucket;
 import org.redisson.api.RKeys;
 import org.redisson.api.RedissonClient;
 import top.alexmmd.redis.CommonRedisApplicationTests;
@@ -26,6 +28,17 @@ public class DelayQueueTest extends CommonRedisApplicationTests {
         for (String key : keys.getKeys()) {
             System.out.println("key = " + key);
         }
+    }
+
+    @Test
+    public void testGet() {
+        RBucket<Student> bucket = redissonClient.getBucket("first-student");
+        bucket.set(Student.builder()
+                .id(1)
+                .level("primary school")
+                .build());
+        Student student = bucket.get();
+        Assertions.assertEquals(1, (int) student.getId());
     }
 
     @Test
