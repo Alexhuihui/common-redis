@@ -76,6 +76,19 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <!--ID可以随便写，但是要与maven的setting文件中一致-->
+            <id>release</id>
+            <!--指向仓库类型为hosted(宿主仓库）的储存类型为Release的仓库-->
+            <url>https://www.alexmmd.top/nexus/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot</id>
+            <url>https://www.alexmmd.top/nexus/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
