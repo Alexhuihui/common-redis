@@ -9,6 +9,8 @@ import cn.hutool.extra.spring.SpringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import top.alexmmd.redis.annos.IQueueListener;
+import top.alexmmd.redis.annos.Queue;
 import top.alexmmd.redis.annos.QueueConsumer;
 
 import java.util.HashMap;

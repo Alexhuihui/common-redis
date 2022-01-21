@@ -1,4 +1,4 @@
-package top.alexmmd.redis.delay;
+package top.alexmmd.redis.annos;
 
 /**
  * @author 汪永晖

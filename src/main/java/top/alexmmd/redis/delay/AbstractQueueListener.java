@@ -1,6 +1,7 @@
 package top.alexmmd.redis.delay;
 
 import lombok.extern.slf4j.Slf4j;
+import top.alexmmd.redis.annos.IQueueListener;
 import top.alexmmd.redis.utils.ReflectUtil;
 
 import java.lang.reflect.ParameterizedType;
